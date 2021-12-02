@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    password: 'root' #'coherent@123'
+    url: 'jdbc:mysql://localhost:3306/oauth' #'jdbc:mysql://95.217.209.135:3306/unnamed_dev?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC'
+    username: 'root' #'remote'
+    driverClassName: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: "10000"
+      maximum-pool-size: "20"
+      minimum-idle: "5"
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: none
+      naming: {physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl}
+    properties:
+      hibernate:
+        format_sql: false
+        enable_lazy_load_no_trans: true
+      show-sql: true
+  freemarker:
+    suffix: .ftl
+    template-loader-path: classpath:/templates
+
+
+app:
+  oauth-private-key: oauth-private.key
+  oauth-public-key: oauth-public.key
+  client.id: 0bbd9870-d022-4513-beb0-17ed79cc6bc9
+  tenant.id: 5e007b6c-258b-4fde-adc1-8bf8a135885d
+  client.newId: __jZ5B9qO9BUF~j~1CK6mF5fRLFabqu9UU
+  graph.api.uri: https://graph.windows.net/
+  signin.url: https://login.microsoftonline.com/
+  subject: UN_NAMED_COHERENT_ATTENDENCE
+  issuer: COHERENT_ATTENDENCE
